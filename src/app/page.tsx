@@ -1,20 +1,20 @@
 import { Waves } from "@/components/Icons/Waves";
-import { setTimeout } from "timers";
+import latestFormattedDate from "../../utils/dayCalculation";
 
 export default async function Home() {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-
-  const lat = 58.7984;
-  const lng = 17.8081;
-  const params = "windSpeed";
+  const lat = -22.970722;
+  const lng = -43.182365;
+  const start = "2023-12-13";
+  const end = latestFormattedDate.toString();
+  const params = "waterTemperature";
 
   const res = await fetch(
-    `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`,
+    `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}&start=${start}&end=${end}`,
     {
       headers: {
         Authorization: process.env.STORMGLASS_APIKEY?.toString()!,
       },
-      next: { revalidate: 80000 },
+      // next: { revalidate: 80000 },
     }
   );
   const json = await res.json();
