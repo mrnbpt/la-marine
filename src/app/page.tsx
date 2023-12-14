@@ -1,12 +1,14 @@
 import { Waves } from "@/components/Icons/Waves";
 import latestFormattedDate from "../../utils/dayCalculation";
+import { NewAreaChart } from "@/components/Charts/AreaChart";
 
 export default async function Home() {
-  const lat = -22.970722;
-  const lng = -43.182365;
+  const lat = -22.980645;
+  const lng = -43.188332;
   const start = "2023-12-13";
   const end = latestFormattedDate.toString();
-  const params = "waterTemperature";
+  const params =
+    "waterTemperature,waveHeight,airTemperature,humidity,precipitation";
 
   const res = await fetch(
     `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}&start=${start}&end=${end}`,
@@ -39,8 +41,8 @@ export default async function Home() {
               personalized insights
             </p>
           </div>
-          <div className="bg-transparentBg rounded-l p-5 h-64">
-            <span>teste</span>
+          <div className="bg-transparentBg rounded-xl p-5">
+            <NewAreaChart />
           </div>
         </section>
       </div>
