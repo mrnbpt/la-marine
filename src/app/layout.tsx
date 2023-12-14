@@ -26,7 +26,7 @@ const neueMachina = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Triton Tracker",
+  title: "La Marine",
   description: "Daily sea conditions and personalized insights",
 };
 

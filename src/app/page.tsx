@@ -29,9 +29,9 @@ export default async function Home() {
             La Marine
           </span>
         </header>
-        <section className="flex flex-col gap-10 mt-20">
+        <section className="flex flex-col gap-20 mt-20">
           <div className="flex flex-col gap-2">
-            <h1 className="font-formula text-heading max-w-lg leading-tight bg-gradient-to-r from-gradientBlue1 from-10% via-gradientBlue2 via-50% to-gradientBlue3 to-90% text-transparent bg-clip-text">
+            <h1 className="font-formula text-heading max-w-lg leading-tight bg-gradient-to-r from-gradientBlue1 from-10% via-gradientBlue2 via-45% to-gradientBlue3 to-90% text-transparent bg-clip-text">
               Daily insights for water activities
             </h1>
             <p className="text-transparentText font-neueMontrealRegular max-w-md">

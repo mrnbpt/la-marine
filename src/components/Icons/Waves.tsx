@@ -2,7 +2,13 @@ import * as React from "react";
 
 export function Waves() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} fill="none">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={20}
+      height={20}
+      fill="none"
+      className="mb-1"
+    >
       <path
         stroke="#001466"
         strokeLinecap="square"
