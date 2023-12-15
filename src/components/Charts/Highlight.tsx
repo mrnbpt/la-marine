@@ -8,12 +8,12 @@ interface HighlightType {
 export function Highlight({ text, metric }: HighlightType) {
   return (
     <Card
-      className="max-w-xs mx-auto"
+      className="flex flex-col gap-1"
       decoration="top"
       decorationColor={"indigo"}
     >
       <Text>{text}</Text>
-      <Metric>{metric}</Metric>
+      <Metric className="font-medium">{metric}</Metric>
     </Card>
   );
 }

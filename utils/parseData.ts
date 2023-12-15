@@ -1,6 +1,6 @@
 import { format, parseISO } from "date-fns";
 
-interface OriginalFormat {
+interface DataType {
   airTemperature: { [key: string]: number };
   humidity: any;
   precipitation: any;
@@ -9,7 +9,7 @@ interface OriginalFormat {
   waveHeight: any;
 }
 
-export function parseData(data: OriginalFormat[]) {
+export function parseData(data: DataType[]) {
   const parsedData = data.map((item) => {
     const dateObj = parseISO(item.time);
     console.log(dateObj);

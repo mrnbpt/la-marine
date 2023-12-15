@@ -1,19 +1,20 @@
 import { Waves } from "@/components/Icons/Waves";
-import latestFormattedDate from "../../utils/dayCalculation";
+import { latestFormattedDate, dayMinusSeven } from "../../utils/dayCalculation";
 import { NewAreaChart } from "@/components/Charts/AreaChart";
 import { Highlight } from "@/components/Charts/Highlight";
 import { LimitBar } from "@/components/Charts/LimitBar";
 import { parseData } from "../../utils/parseData";
 
 export default async function Home() {
-  const lat = -22.980645;
-  const lng = -43.188332;
-  const start = "2023-12-13";
-  const end = latestFormattedDate.toString();
+  const lat = -22.96785;
+  const lng = -43.178982;
+  const start = dayMinusSeven;
+  const end = latestFormattedDate;
   const params =
     "waterTemperature,waveHeight,airTemperature,humidity,precipitation";
 
-  const res = await fetch(
+  // Fetching Sea Data
+  const sea = await fetch(
     `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}&start=${start}&end=${end}`,
     {
       headers: {
@@ -22,9 +23,19 @@ export default async function Home() {
       // next: { revalidate: 80000 },
     }
   );
-  const json = await res.json();
-  const parsedData = parseData(json.hours);
-  console.log(json);
+  const seaJson = await sea.json();
+  const parsedData = parseData(seaJson.hours);
+
+  // Fetching Temperature Data
+  const options = { method: "GET", headers: { accept: "application/json" } };
+  const temp = await fetch(
+    "https://api.tomorrow.io/v4/weather/history/recent?location=rio%20de%20janeiro&timesteps=1h&apikey=izHyzeMAz76XObTDducsbls5fw6fj7M0",
+    options
+  );
+
+  const tempJson = await temp.json();
+
+  console.log(tempJson);
 
   return (
     <div className="w-screen h-screen">
@@ -46,7 +57,7 @@ export default async function Home() {
             </p>
           </div>
           <div className=" flex flex-col gap-4 bg-transparentBg rounded-xl p-5">
-            <div className="flex gap-4">
+            <div className="grid grid-cols-3 gap-4">
               <Highlight text="Sea Temperature" metric={25.5} />
               <Highlight text="Sea Temperature" metric={25.5} />
               <LimitBar text={"UV Index"} metric={40} />

@@ -7,7 +7,7 @@ interface LimitBarType {
 
 export function LimitBar({ text, metric }: LimitBarType) {
   return (
-    <Card className="max-w-sm mx-auto">
+    <Card>
       <Flex>
         <Text>{text}</Text>
         <Text>{metric}</Text>
