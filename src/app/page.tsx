@@ -1,6 +1,9 @@
 import { Waves } from "@/components/Icons/Waves";
 import latestFormattedDate from "../../utils/dayCalculation";
 import { NewAreaChart } from "@/components/Charts/AreaChart";
+import { Highlight } from "@/components/Charts/Highlight";
+import { LimitBar } from "@/components/Charts/LimitBar";
+import { parseData } from "../../utils/parseData";
 
 export default async function Home() {
   const lat = -22.980645;
@@ -20,6 +23,7 @@ export default async function Home() {
     }
   );
   const json = await res.json();
+  const parsedData = parseData(json.hours);
   console.log(json);
 
   return (
@@ -41,8 +45,13 @@ export default async function Home() {
               personalized insights
             </p>
           </div>
-          <div className="bg-transparentBg rounded-xl p-5">
-            <NewAreaChart />
+          <div className=" flex flex-col gap-4 bg-transparentBg rounded-xl p-5">
+            <div className="flex gap-4">
+              <Highlight text="Sea Temperature" metric={25.5} />
+              <Highlight text="Sea Temperature" metric={25.5} />
+              <LimitBar text={"UV Index"} metric={40} />
+            </div>
+            <NewAreaChart fetchedData={parsedData} />
           </div>
         </section>
       </div>
