@@ -39,14 +39,17 @@ export default async function Home() {
               <Highlight
                 text="Sea Temperature"
                 metric={sea.hours[hoursLength].waterTemperature.sg - 4}
+                metricType="sea"
               />
               <Highlight
                 text="Air Temperature"
                 metric={sea.hours[hoursLength].airTemperature.sg}
+                metricType="air"
               />
               <Highlight
                 text="Humity Now"
                 metric={`${sea.hours[hoursLength].humidity.sg}%`}
+                metricType="humidity"
               />
             </div>
             <NewAreaChart fetchedData={parsedHours} />

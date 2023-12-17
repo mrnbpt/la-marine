@@ -42,7 +42,7 @@ const config: Config = {
             emphasis: colors.gray[700],
           },
           border: {
-            DEFAULT: "#F0F0F0",
+            DEFAULT: "rgba(0, 0, 0, 0.04)",
           },
           ring: {
             DEFAULT: "#F0F0F0",
