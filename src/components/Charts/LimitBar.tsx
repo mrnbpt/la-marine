@@ -13,9 +13,9 @@ export function LimitBar({ text, metric }: LimitBarType) {
         <Text>{metric}</Text>
       </Flex>
       <CategoryBar
-        values={[40, 30, 20, 10]}
+        values={[5, 10, 12, 14]}
         colors={["emerald", "yellow", "orange", "rose"]}
-        markerValue={62}
+        markerValue={4}
         className="mt-3"
       />
     </Card>

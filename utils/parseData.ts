@@ -1,6 +1,6 @@
 import { format, parseISO } from "date-fns";
 
-interface DataType {
+interface StormGlassDataType {
   airTemperature: { [key: string]: number };
   humidity: any;
   precipitation: any;
@@ -9,7 +9,7 @@ interface DataType {
   waveHeight: any;
 }
 
-export function parseData(data: DataType[]) {
+export function parseStormGlassData(data: StormGlassDataType[]) {
   const parsedData = data.map((item) => {
     const dateObj = parseISO(item.time);
     console.log(dateObj);
@@ -17,7 +17,7 @@ export function parseData(data: DataType[]) {
     console.log(date);
     return {
       date: date,
-      "Sea Temperature": item.waterTemperature.sg,
+      "Sea Temperature": +item.waterTemperature.sg - 4,
       "Air Temperature": item.airTemperature.sg,
     };
   });

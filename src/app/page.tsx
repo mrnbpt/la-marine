@@ -1,45 +1,21 @@
 import { Waves } from "@/components/Icons/Waves";
-import { latestFormattedDate, dayMinusSeven } from "../../utils/dayCalculation";
 import { NewAreaChart } from "@/components/Charts/AreaChart";
 import { Highlight } from "@/components/Charts/Highlight";
-import { LimitBar } from "@/components/Charts/LimitBar";
-import { parseData } from "../../utils/parseData";
+import { getSeaTemperature, getSunData } from "@/actions";
+import { parseStormGlassData } from "../../utils/parseData";
 
 export default async function Home() {
-  const lat = -22.96785;
-  const lng = -43.178982;
-  const start = dayMinusSeven;
-  const end = latestFormattedDate;
-  const params =
-    "waterTemperature,waveHeight,airTemperature,humidity,precipitation";
+  const seaResults = getSeaTemperature(-22.980813, -43.186482);
+  const sunResults = getSunData(-22.980813, -43.186482);
 
-  // Fetching Sea Data
-  const sea = await fetch(
-    `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}&start=${start}&end=${end}`,
-    {
-      headers: {
-        Authorization: process.env.STORMGLASS_APIKEY?.toString()!,
-      },
-      // next: { revalidate: 80000 },
-    }
-  );
-  const seaJson = await sea.json();
-  const parsedData = parseData(seaJson.hours);
+  const [sea, sun] = await Promise.all([seaResults, sunResults]);
 
-  // Fetching Temperature Data
-  const options = { method: "GET", headers: { accept: "application/json" } };
-  const temp = await fetch(
-    "https://api.tomorrow.io/v4/weather/history/recent?location=rio%20de%20janeiro&timesteps=1h&apikey=izHyzeMAz76XObTDducsbls5fw6fj7M0",
-    options
-  );
-
-  const tempJson = await temp.json();
-
-  console.log(tempJson);
+  const parsedHours = parseStormGlassData(sea.hours);
+  const hoursLength = sea.hours.length - 1;
 
   return (
     <div className="w-screen h-screen">
-      <div className="ml-20 mr-20 mt-9 lg:ml-32 lg:mr-32 xl:ml-48 xl:mr-48">
+      <div className="ml-20 mr-20 mt-9 lg:ml-32 lg:mr-32 xl:ml-60 xl:mr-60 h-full">
         <header className="flex items-center gap-2">
           <Waves />
           <span className="font-neueMachina leading-[14px] text-blueBrand">
@@ -58,13 +34,31 @@ export default async function Home() {
           </div>
           <div className=" flex flex-col gap-4 bg-transparentBg rounded-xl p-5">
             <div className="grid grid-cols-3 gap-4">
-              <Highlight text="Sea Temperature" metric={25.5} />
-              <Highlight text="Sea Temperature" metric={25.5} />
-              <LimitBar text={"UV Index"} metric={40} />
+              <Highlight
+                text="Sea Temperature"
+                metric={sea.hours[hoursLength].waterTemperature.sg - 4}
+              />
+              <Highlight
+                text="Air Temperature"
+                metric={sea.hours[hoursLength].airTemperature.sg}
+              />
+              <Highlight
+                text="Humity Now"
+                metric={`${sea.hours[hoursLength].humidity.sg} %`}
+              />
             </div>
-            <NewAreaChart fetchedData={parsedData} />
+            <NewAreaChart fetchedData={parsedHours} />
           </div>
         </section>
+        <footer className="mt-12 text-xs text-transparentText font-neueMontrealRegular">
+          Made by{" "}
+          <a
+            className="text-blackText underline"
+            href="https://twitter.com/mrncst"
+          >
+            Mariana
+          </a>
+        </footer>
       </div>
     </div>
   );
