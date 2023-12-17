@@ -12,7 +12,7 @@ export async function getSeaTemperature(lat: number, lng: number) {
       headers: {
         Authorization: process.env.STORMGLASS_APIKEY?.toString()!,
       },
-      next: { revalidate: 3000 },
+      next: { revalidate: 3600 },
     }
   );
   const parsed = await res.json();
@@ -30,7 +30,7 @@ export async function getSunData(lat: number, lng: number) {
       headers: {
         Authorization: process.env.STORMGLASS_APIKEY?.toString()!,
       },
-      next: { revalidate: 3000 },
+      next: { revalidate: 3600 },
     }
   );
   const parsed = await res.json();

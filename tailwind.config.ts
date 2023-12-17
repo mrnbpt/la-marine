@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const colors = require("tailwindcss/colors");
+
 const config: Config = {
   darkMode: "class",
   content: [
@@ -40,15 +41,15 @@ const config: Config = {
             emphasis: colors.gray[700],
           },
           border: {
-            DEFAULT: colors.gray[200],
+            DEFAULT: "#F0F0F0",
           },
           ring: {
-            DEFAULT: colors.gray[200],
+            DEFAULT: "#F0F0F0",
           },
           content: {
             subtle: colors.gray[400],
-            DEFAULT: colors.gray[500],
-            emphasis: colors.gray[700],
+            DEFAULT: "#666562",
+            emphasis: "#393C40",
             strong: colors.gray[900],
             inverted: colors.white,
           },
@@ -146,7 +147,27 @@ const config: Config = {
       pattern:
         /^(fill-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
     },
+    ...[
+      "[#2B73FF]",
+      "[#A1E3FF]",
+      ["[#093FA9]"],
+      ["my-custom-color-450"],
+    ].flatMap((customColor) => [
+      `bg-${customColor}`,
+      `border-${customColor}`,
+      `hover:bg-${customColor}`,
+      `hover:border-${customColor}`,
+      `hover:text-${customColor}`,
+      `fill-${customColor}`,
+      `ring-${customColor}`,
+      `stroke-${customColor}`,
+      `text-${customColor}`,
+      `ui-selected:bg-${customColor}`,
+      `ui-selected:border-${customColor}`,
+      `ui-selected:text-${customColor}`,
+    ]),
   ],
+
   plugins: [require("@headlessui/tailwindcss")],
 };
 

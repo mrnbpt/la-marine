@@ -8,12 +8,12 @@ interface HighlightType {
 export function Highlight({ text, metric }: HighlightType) {
   return (
     <Card
-      className="flex flex-col gap-1"
-      decoration="top"
-      decorationColor={"indigo"}
+      className="flex flex-col gap-2"
+      decoration="left"
+      decorationColor={"#093FA9"}
     >
-      <Text>{text}</Text>
-      <Metric className="font-medium">{metric}</Metric>
+      <Text className="font-neueMontrealRegular">{text}</Text>
+      <Metric className="font-medium font-neueMontrealRegular">{metric}</Metric>
     </Card>
   );
 }
