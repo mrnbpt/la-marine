@@ -1,4 +1,5 @@
-import { Waves } from "@/components/Icons/Waves";
+import { Waves } from "../../public/Icons/Waves";
+import { WavesBg } from "../../public/svgs/WavesBg";
 import { NewAreaChart } from "@/components/Charts/AreaChart";
 import { Highlight } from "@/components/Charts/Highlight";
 import { getSeaTemperature, getSunData } from "@/actions";
@@ -14,7 +15,8 @@ export default async function Home() {
   const hoursLength = sea.hours.length - 1;
 
   return (
-    <div className="w-screen h-screen">
+    <div className="w-screen h-screen relative">
+      <WavesBg />
       <div className="ml-20 mr-20 mt-9 lg:ml-32 lg:mr-32 xl:ml-60 xl:mr-60 h-full">
         <header className="flex items-center gap-2">
           <Waves />
