@@ -2,7 +2,7 @@ import { Card, Metric, Text } from "@tremor/react";
 
 interface HighlightType {
   text: string;
-  metric: number;
+  metric: any;
   metricType: string;
 }
 
