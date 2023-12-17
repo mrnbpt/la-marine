@@ -34,7 +34,7 @@ export default async function Home() {
               personalized insights
             </p>
           </div>
-          <div className=" flex flex-col gap-4 bg-transparentBg rounded-xl p-5">
+          <div className=" flex flex-col gap-4 bg-transparentBg rounded-xl p-5 border border-transparentBorder">
             <div className="grid grid-cols-3 gap-4">
               <Highlight
                 text="Sea Temperature"

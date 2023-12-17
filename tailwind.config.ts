@@ -15,11 +15,12 @@ const config: Config = {
     current: "currentColor",
     extend: {
       colors: {
-        bgYellow: "#FFFCF5",
+        bgYellow: "#FFFEFA",
         blueBrand: "#001466",
         blueBrandLight: "#0C4AC2",
         transparentText: "rgba(0, 0, 0, 0.70)",
-        transparentBg: "rgba(0, 0, 0, 0.02)",
+        transparentBorder: "rgba(0, 0, 0, 0.04)",
+        transparentBg: "rgba(0, 0, 0, 0.01)",
         blackText: "#081226",
         gradientBlue1: "#102857",
         gradientBlue2: "#063AA0",
