@@ -17,7 +17,7 @@ export function parseStormGlassData(data: StormGlassDataType[]) {
     console.log(date);
     return {
       date: date,
-      "Sea Temperature": +item.waterTemperature.sg - 4,
+      "Sea Temperature": +item.waterTemperature.sg - 3,
       "Air Temperature": item.airTemperature.sg,
     };
   });
