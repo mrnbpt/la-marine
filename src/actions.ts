@@ -16,6 +16,7 @@ export async function getSeaTemperature(lat: number, lng: number) {
     }
   );
   const parsed = await res.json();
+  console.log(parsed);
   return parsed;
 }
 

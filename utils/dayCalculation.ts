@@ -12,10 +12,11 @@ import { format, subDays } from "date-fns";
 
 // export { latestDate, ddMinus7 };
 
-const today = new Date();
-const sevenDaysAgo = subDays(today, 7);
+const tomorrow = new Date();
+tomorrow.setDate(tomorrow.getDate() + 1);
+const sevenDaysAgo = subDays(tomorrow, 7);
 
-const todayFormatted = format(today, "yyyy-MM-dd");
+const todayFormatted = format(tomorrow, "yyyy-MM-dd");
 const d7Formatted = format(sevenDaysAgo, "yyyy-MM-dd");
 
 export { todayFormatted, d7Formatted };
