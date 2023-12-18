@@ -28,20 +28,18 @@ export default async function Home() {
             <h1 className="font-formula text-heading max-w-lg leading-tight bg-gradient-to-r from-gradientBlue1 from-10% via-gradientBlue2 via-45% to-gradientBlue3 to-90% text-transparent bg-clip-text">
               Daily insights for water activities
             </h1>
-            <p className="text-transparentText font-neueMontrealRegular max-w-md">
+            <p className="text-transparentText max-w-md">
               Guiding your coastal adventures with daily sea conditions and
               personalized insights
             </p>
           </div>
-          <div>
-            <OptionTabs
-              data={sea}
-              parsedHours={parsedHours}
-              hoursLength={hoursLength}
-            />
-          </div>
+          <OptionTabs
+            data={sea}
+            parsedHours={parsedHours}
+            hoursLength={hoursLength}
+          />
         </section>
-        <footer className="mt-12 text-xs text-transparentText font-neueMontrealRegular">
+        <footer className="mt-12 text-xs text-transparentText">
           Made by{" "}
           <a
             className="text-blackText underline"

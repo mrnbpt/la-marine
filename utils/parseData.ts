@@ -12,9 +12,7 @@ interface StormGlassDataType {
 export function parseStormGlassData(data: StormGlassDataType[]) {
   const parsedData = data.map((item) => {
     const dateObj = parseISO(item.time);
-    console.log(dateObj);
     const date = format(dateObj, "PPpp");
-    console.log(date);
     return {
       date: date,
       "Sea Temperature": +item.waterTemperature.sg - 3,
