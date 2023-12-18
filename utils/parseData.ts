@@ -15,7 +15,7 @@ export function parseStormGlassData(data: StormGlassDataType[]) {
     const date = format(dateObj, "PPpp");
     return {
       date: date,
-      "Sea Temperature": +item.waterTemperature.sg - 3,
+      "Sea Temperature": +item.waterTemperature.sg - 2,
       "Air Temperature": item.airTemperature.sg,
     };
   });

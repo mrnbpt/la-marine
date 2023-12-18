@@ -13,9 +13,9 @@ export function Highlight({ text, metric, metricType }: HighlightType) {
         <div
           className={`h-1 w-8 rounded-full ${
             metricType === "sea"
-              ? metric < 19
+              ? metric < 29
                 ? "bg-red-500"
-                : metric >= 20 && metric <= 21
+                : metric >= 20 && metric <= 25
                 ? "bg-yellow-400"
                 : "bg-green-400"
               : metricType === "air"

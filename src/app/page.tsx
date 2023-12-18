@@ -14,7 +14,7 @@ export default async function Home() {
 
   return (
     <>
-      <div className="relative hidden md:block top-0 right-0">
+      <div className="relative hidden md:block top-[-60px] right-0">
         <WavesBg />
       </div>
       <div className="w-screen mt-8 md:mt-16">
@@ -36,7 +36,7 @@ export default async function Home() {
             />
           </section>
           <footer className="mt-6 mb-4 text-right text-xs text-transparentText">
-            Made by{" "}
+            Design and built by{" "}
             <a
               className="text-blackText underline decoration-blackText"
               href="https://twitter.com/mrncst"
