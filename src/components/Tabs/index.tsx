@@ -70,7 +70,7 @@ export function OptionTabs({
           exit={{ opacity: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <div className="flex flex-col gap-4 bg-transparentBg rounded-xl p-5 border border-transparentBorder">
+          <div className="flex flex-col gap-4 bg-transparentBg rounded-xl p-5">
             <div className="grid grid-cols-3 gap-4">
               <Highlight
                 text="Sea Temperature (C°)"
@@ -99,22 +99,22 @@ export function OptionTabs({
           exit={{ opacity: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <div className=" flex flex-col gap-4 bg-transparentBg rounded-xl p-5 border border-transparentBorder">
+          <div className=" flex flex-col gap-4 bg-transparentBg rounded-xl p-5">
             <div className="grid grid-cols-3 gap-4">
               <Highlight
-                text="Sea Temperature (C°)"
-                metric={data.hours[hoursLength].waterTemperature.sg - 3}
-                metricType="sea"
+                text="Wave Height (m)"
+                metric={data.hours[hoursLength].waveHeight.sg}
+                metricType="wave"
               />
               <Highlight
-                text="Air Temperature (C°)"
-                metric={data.hours[hoursLength].airTemperature.sg}
-                metricType="air"
+                text="Current Speed"
+                metric={data.hours[hoursLength].currentSpeed.sg}
+                metricType="currentSpeed"
               />
               <Highlight
-                text="Humidity Now"
-                metric={`${data.hours[hoursLength].humidity.sg}%`}
-                metricType="humidity"
+                text="Wave Period (s)"
+                metric={data.hours[hoursLength].wavePeriod.sg}
+                metricType="wavePeriod"
               />
             </div>
             <NewAreaChart fetchedData={parsedHours} />

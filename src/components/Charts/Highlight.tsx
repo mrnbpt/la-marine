@@ -21,7 +21,31 @@ export function Highlight({ text, metric, metricType }: HighlightType) {
               : metricType === "air"
               ? metric > 26
                 ? "bg-red-500"
-                : metric >= 23 && metric <= 24
+                : metric >= 23 && metric <= 26
+                ? "bg-yellow-500"
+                : "bg-green-500"
+              : metricType === "precipitation"
+              ? metric > 80
+                ? "bg-red-500"
+                : metric >= 20 && metric <= 80
+                ? "bg-yellow-500"
+                : "bg-green-500"
+              : metricType === "currentSpeed"
+              ? metric > 2
+                ? "bg-red-500"
+                : metric >= 1 && metric <= 2
+                ? "bg-yellow-500"
+                : "bg-green-500"
+              : metricType === "wavePeriod"
+              ? metric > 10
+                ? "bg-red-500"
+                : metric >= 2 && metric <= 10
+                ? "bg-yellow-500"
+                : "bg-green-500"
+              : metricType === "wave"
+              ? metric > 3
+                ? "bg-red-500"
+                : metric >= 1 && metric <= 3
                 ? "bg-yellow-500"
                 : "bg-green-500"
               : metricType === "humidity"

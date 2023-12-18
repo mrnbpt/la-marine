@@ -12,7 +12,7 @@ interface NewAreaChartProps {
 
 export const NewAreaChart: React.FC<NewAreaChartProps> = ({ fetchedData }) => {
   return (
-    <Card className="font-neueMontrealRegular">
+    <Card>
       <Title>Sea Temperature and Air Temperature</Title>
       <AreaChart
         className="h-72 mt-4"

@@ -4,7 +4,7 @@ export async function getSeaTemperature(lat: number, lng: number) {
   const start = dayMinusSeven;
   const end = latestFormattedDate;
   const params =
-    "waterTemperature,waveHeight,airTemperature,humidity,precipitation,waveHeight,windWaveHeight";
+    "waterTemperature,waveHeight,airTemperature,humidity,precipitation,windWaveHeight,currentSpeed,wavePeriod";
 
   const res = await fetch(
     `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}&start=${start}&end=${end}`,
