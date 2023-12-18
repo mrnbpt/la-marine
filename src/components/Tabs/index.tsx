@@ -44,7 +44,11 @@ export function OptionTabs({
   const [currentTab, setCurrentTab] = useState("tab1");
 
   return (
-    <Tabs.Root value={currentTab} onValueChange={setCurrentTab}>
+    <Tabs.Root
+      value={currentTab}
+      onValueChange={setCurrentTab}
+      className="flex-1"
+    >
       <div className="flex justify-between items-center mb-4">
         <Tabs.List className="gap-2 inline-flex">
           <Tabs.Trigger
