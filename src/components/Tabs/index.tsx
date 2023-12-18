@@ -45,7 +45,7 @@ export function OptionTabs({
 
   return (
     <Tabs.Root value={currentTab} onValueChange={setCurrentTab}>
-      <div className="flex  sm:justify-start md:justify-between items-center mb-4">
+      <div className="flex justify-between items-center mb-4">
         <Tabs.List className="gap-2 inline-flex">
           <Tabs.Trigger
             className={`text-transparentText text-sm font-medium py-1 px-3 rounded-full data-[state=inactive]:hover:bg-transparentBg data-[state=inactive]:hover:text-blueBrandLight data-[state=active]:text-blueBrandLight transition-colors duration-200 ${
