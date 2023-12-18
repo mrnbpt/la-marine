@@ -20,7 +20,7 @@ const config: Config = {
         blueBrandLight: "#0C4AC2",
         transparentText: "rgba(0, 0, 0, 0.70)",
         transparentBorder: "rgba(0, 0, 0, 0.04)",
-        transparentBg: "rgba(0, 0, 0, 0.01)",
+        transparentBg: "rgba(0, 0, 0, 0.02)",
         blackText: "#081226",
         gradientBlue1: "#102857",
         gradientBlue2: "#063AA0",

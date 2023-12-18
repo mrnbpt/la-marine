@@ -45,24 +45,30 @@ export function OptionTabs({
 
   return (
     <Tabs.Root value={currentTab} onValueChange={setCurrentTab}>
-      <Tabs.List className="gap-2 mb-4 inline-flex">
-        <Tabs.Trigger
-          className={`text-transparentText text-sm font-medium py-1 px-3 rounded-full data-[state=inactive]:hover:bg-blueBrandLight data-[state=inactive]:hover:text-white data-[state=active]:text-white transition-colors duration-200 ${
-            currentTab === "tab1" && "bg-blueBrandLight"
-          }`}
-          value="tab1"
-        >
-          <span>Swimming</span>
-        </Tabs.Trigger>
-        <Tabs.Trigger
-          className={`text-transparentText text-sm font-medium py-1 px-3 rounded-full data-[state=inactive]:hover:bg-blueBrandLight data-[state=inactive]:hover:text-white data-[state=active]:text-white transition-colors duration-200 ${
-            currentTab === "tab2" && "bg-blueBrandLight"
-          }`}
-          value="tab2"
-        >
-          Surfing
-        </Tabs.Trigger>
-      </Tabs.List>
+      <div className="flex justify-between items-center mb-4">
+        <Tabs.List className="gap-2 inline-flex">
+          <Tabs.Trigger
+            className={`text-transparentText text-sm font-medium py-1 px-3 rounded-full data-[state=inactive]:hover:bg-transparentBg data-[state=inactive]:hover:text-blueBrandLight data-[state=active]:text-blueBrandLight transition-colors duration-200 ${
+              currentTab === "tab1" && "text-blueBrandLight bg-transparentBg"
+            }`}
+            value="tab1"
+          >
+            <span>Swimming</span>
+          </Tabs.Trigger>
+          <Tabs.Trigger
+            className={`text-transparentText text-sm font-medium py-1 px-3 rounded-full data-[state=inactive]:hover:bg-transparentBg data-[state=inactive]:hover:text-blueBrandLight data-[state=active]:text-blueBrandLight transition-colors duration-200 ${
+              currentTab === "tab2" && "text-blueBrandLight bg-transparentBg"
+            }`}
+            value="tab2"
+          >
+            Surfing
+          </Tabs.Trigger>
+        </Tabs.List>
+        <div className="flex items-center gap-2 bg-transparentBg rounded-full px-3 py-1 text-transparentText">
+          <div className="rounded-full h-2 w-2 bg-green-400" />
+          <span className="text-sm">Copacabana, Rio de Janeiro</span>
+        </div>
+      </div>
       <Tabs.Content value="tab1">
         <motion.div
           initial={{ opacity: 0 }}
