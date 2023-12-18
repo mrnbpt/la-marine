@@ -15,7 +15,7 @@ export const NewAreaChart: React.FC<NewAreaChartProps> = ({ fetchedData }) => {
     <Card>
       <Title>Sea Temperature and Air Temperature</Title>
       <AreaChart
-        className="h-72 mt-4"
+        className="mt-4"
         data={fetchedData}
         index="date"
         categories={["Sea Temperature", "Air Temperature"]}

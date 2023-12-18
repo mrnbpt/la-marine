@@ -57,7 +57,7 @@ export function Highlight({ text, metric, metricType }: HighlightType) {
               : "bg-gray-500"
           }`}
         ></div>
-        <Text className="font-neueMontrealRegular">{text}</Text>
+        <Text className="">{text}</Text>
       </div>
       <Metric className="font-medium font-neueMontrealRegular">{metric}</Metric>
     </Card>

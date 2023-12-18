@@ -77,7 +77,7 @@ export function OptionTabs({
           transition={{ duration: 0.7 }}
         >
           <div className="flex flex-col gap-4 bg-transparentBg rounded-xl p-5">
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid xs:grid-rows-3 md:grid-cols-3 gap-4">
               <Highlight
                 text="Sea Temperature (C°)"
                 metric={data.hours[hoursLength].waterTemperature.sg - 3}

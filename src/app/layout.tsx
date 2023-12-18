@@ -9,16 +9,7 @@ const formula = localFont({
   variable: "--font-formula",
   display: "swap",
 });
-const neueMontrealMedium = localFont({
-  src: "../../public/fonts/PPNeueMontreal-Medium.ttf",
-  variable: "--font-neueMontrealMedium",
-  display: "swap",
-});
-const neueMontrealRegular = localFont({
-  src: "../../public/fonts/PPNeueMontreal-Regular.ttf",
-  variable: "--font-neueMontrealegular",
-  display: "swap",
-});
+
 const neueMachina = localFont({
   src: "../../public/fonts/PPNeueMachina-PlainMedium.ttf",
   variable: "--font-neueMachina",
@@ -38,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="antialiased">
       <body
-        className={`${inter.className} ${formula.variable} ${neueMontrealRegular.variable} ${neueMontrealMedium.variable} ${neueMachina.variable} bg-bgYellow`}
+        className={`${inter.className} ${formula.variable} ${neueMachina.variable} bg-bgYellow`}
       >
         {children}
       </body>
