@@ -48,7 +48,7 @@ export function OptionTabs({
       <div className="flex justify-between items-center mb-4">
         <Tabs.List className="gap-2 inline-flex">
           <Tabs.Trigger
-            className={`text-transparentText text-sm font-medium py-1 px-3 rounded-full  data-[state=inactive]:hover:text-blueBrandLight data-[state=active]:text-blueBrandLight transition-colors duration-200 ${
+            className={`text-transparentText text-sm font-medium py-1 px-3 rounded-full  data-[state=inactive]:hover:text-blueBrandLight data-[state=active]:text-blueBrandLight transition-colors duration-300 ${
               currentTab === "tab1" && "text-blueBrandLight bg-transparentBg"
             }`}
             value="tab1"
@@ -56,7 +56,7 @@ export function OptionTabs({
             <span>Swimming</span>
           </Tabs.Trigger>
           <Tabs.Trigger
-            className={`text-transparentText text-sm font-medium py-1 px-3 rounded-full data-[state=inactive]:hover:text-blueBrandLight data-[state=active]:text-blueBrandLight transition-colors duration-200 ${
+            className={`text-transparentText text-sm font-medium py-1 px-3 rounded-full data-[state=inactive]:hover:text-blueBrandLight data-[state=active]:text-blueBrandLight transition-colors duration-300 ${
               currentTab === "tab2" && "text-blueBrandLight bg-transparentBg"
             }`}
             value="tab2"

@@ -15,6 +15,7 @@ export const NewAreaChart: React.FC<NewAreaChartProps> = ({ fetchedData }) => {
     <Card className="flex-1">
       <Title>Sea Temperature and Air Temperature</Title>
       <AreaChart
+        showGridLines={true}
         className="mt-4"
         data={fetchedData}
         index="date"

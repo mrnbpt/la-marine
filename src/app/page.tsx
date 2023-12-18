@@ -17,8 +17,8 @@ export default async function Home() {
       <div className="relative hidden md:block top-[-60px] right-0">
         <WavesBg />
       </div>
-      <div className="w-screen flex mt-8 md:mt-16 mb-8 md:mb-16">
-        <div className="flex-1 ml-4 mr-4 md:ml-20 md:mr-20 md:mt-9 lg:ml-32 lg:mr-32 xl:ml-60 xl:mr-60">
+      <div className="w-screen flex mt-8 md:mt-16 mb-12 md:mb-16">
+        <div className="flex-1 ml-4 mr-4 md:ml-20 md:mr-20 md:mt-9 lg:ml-32 lg:mr-32 xl:ml-60 xl:mr-60 md:max-h-[900px]">
           <section className="flex flex-col gap-12 md:gap-16">
             <div className="flex flex-col gap-2 md:gap-4">
               <h1 className="font-formula text-3xl md:text-heading max-w-lg leading-tight bg-gradient-to-r from-gradientBlue1 from-10% via-gradientBlue2 via-45% to-gradientBlue3 to-90% text-transparent bg-clip-text">
@@ -35,7 +35,7 @@ export default async function Home() {
               hoursLength={hoursLength}
             />
           </section>
-          <footer className="mt-6 mb-4 text-right text-xs text-transparentText">
+          <footer className="mt-6 text-right text-xs text-transparentText">
             Designed and built by{" "}
             <a
               className="text-blackText underline decoration-blackText"
