@@ -56,7 +56,7 @@ export function OptionTabs({
             <span>Swimming</span>
           </Tabs.Trigger>
           <Tabs.Trigger
-            className={`text-transparentText text-sm font-medium py-1 px-3 rounded-full data-[state=inactive]:hover:text-blueBrandLight data-[state=active]:text-blueBrandLight transition-colors duration-300 ${
+            className={`text-transparentText text-sm font-medium py-1 px-3 rounded-full data-[state=inactive]:hover:text-blueBrandLight data-[state=active]:text-blueBrandLight transition-colors duration-200 ${
               currentTab === "tab2" && "text-blueBrandLight bg-transparentBg"
             }`}
             value="tab2"
