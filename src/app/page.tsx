@@ -17,7 +17,7 @@ export default async function Home() {
       <div className="relative hidden md:block top-0 right-0">
         <WavesBg />
       </div>
-      <div className="w-screen mt-6 md:mt-12">
+      <div className="w-screen mt-10 md:mt-12">
         <div className="ml-4 mr-4 md:ml-20 md:mr-20 md:mt-9 lg:ml-32 lg:mr-32 xl:ml-60 xl:mr-60">
           <section className="flex flex-col gap-12 md:gap-16">
             <div className="flex flex-col gap-2 md:gap-4">
