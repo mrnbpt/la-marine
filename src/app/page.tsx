@@ -36,7 +36,7 @@ export default async function Home() {
             />
           </section>
           <footer className="mt-6 mb-4 text-right text-xs text-transparentText">
-            Design and built by{" "}
+            Designed and built by{" "}
             <a
               className="text-blackText underline decoration-blackText"
               href="https://twitter.com/mrncst"
