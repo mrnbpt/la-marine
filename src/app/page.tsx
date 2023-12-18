@@ -14,7 +14,7 @@ export default async function Home() {
 
   return (
     <>
-      <div className="hidden md:block top-0 right-0">
+      <div className="relative hidden md:block top-0 right-0">
         <WavesBg />
       </div>
       <div className="w-screen mt-6 md:mt-12">
