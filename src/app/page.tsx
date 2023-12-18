@@ -4,6 +4,7 @@ import { NewAreaChart } from "@/components/Charts/AreaChart";
 import { Highlight } from "@/components/Charts/Highlight";
 import { getSeaTemperature, getSunData } from "@/actions";
 import { parseStormGlassData } from "../../utils/parseData";
+import { OptionTabs } from "@/components/Tabs";
 
 export default async function Home() {
   const seaResults = getSeaTemperature(-22.980813, -43.186482);
@@ -34,25 +35,29 @@ export default async function Home() {
               personalized insights
             </p>
           </div>
-          <div className=" flex flex-col gap-4 bg-transparentBg rounded-xl p-5 border border-transparentBorder">
-            <div className="grid grid-cols-3 gap-4">
-              <Highlight
-                text="Sea Temperature"
-                metric={sea.hours[hoursLength].waterTemperature.sg - 4}
-                metricType="sea"
-              />
-              <Highlight
-                text="Air Temperature"
-                metric={sea.hours[hoursLength].airTemperature.sg}
-                metricType="air"
-              />
-              <Highlight
-                text="Humity Now"
-                metric={`${sea.hours[hoursLength].humidity.sg}%`}
-                metricType="humidity"
-              />
+          <div>
+            {/* // Tabs here */}
+            <OptionTabs />
+            <div className=" flex flex-col gap-4 bg-transparentBg rounded-xl p-5 border border-transparentBorder">
+              <div className="grid grid-cols-3 gap-4">
+                <Highlight
+                  text="Sea Temperature"
+                  metric={sea.hours[hoursLength].waterTemperature.sg - 4}
+                  metricType="sea"
+                />
+                <Highlight
+                  text="Air Temperature"
+                  metric={sea.hours[hoursLength].airTemperature.sg}
+                  metricType="air"
+                />
+                <Highlight
+                  text="Humity Now"
+                  metric={`${sea.hours[hoursLength].humidity.sg}%`}
+                  metricType="humidity"
+                />
+              </div>
+              <NewAreaChart fetchedData={parsedHours} />
             </div>
-            <NewAreaChart fetchedData={parsedHours} />
           </div>
         </section>
         <footer className="mt-12 text-xs text-transparentText font-neueMontrealRegular">
