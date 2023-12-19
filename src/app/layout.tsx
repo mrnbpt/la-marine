@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="antialiased">
       <body
-        className={`${inter.className} ${formula.variable} ${neueMachina.variable} bg-bgYellow`}
+        className={`${inter.className} ${formula.variable} ${neueMachina.variable} bg-bgYellow antialiased`}
       >
         {children}
         <Analytics />
