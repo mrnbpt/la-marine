@@ -9,7 +9,7 @@ export async function getSeaTemperature(lat: number, lng: number) {
   const res = await fetch(
     `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}&start=${start}&end=${end}`,
     {
-      next: { revalidate: 3600 },
+      next: { revalidate: 14400 },
       headers: {
         Authorization: process.env.STORMGLASS_APIKEY?.toString()!,
       },
@@ -27,7 +27,7 @@ export async function getSunData(lat: number, lng: number) {
   const res = await fetch(
     `https://api.stormglass.io/v2/solar/point?lat=${lat}&lng=${lng}&params=${params}&start=${start}&end=${end}`,
     {
-      next: { revalidate: 3600 },
+      next: { revalidate: 14400 },
       headers: {
         Authorization: process.env.STORMGLASS_APIKEY?.toString()!,
       },
